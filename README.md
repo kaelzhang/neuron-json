@@ -5,7 +5,7 @@
 
 # read-neuron-json
 
-<!-- description -->
+The utility to read neuron.json
 
 ## Install
 
@@ -16,8 +16,24 @@ $ npm install read-neuron-json --save
 ## Usage
 
 ```js
-var read_neuron_json = require('read-neuron-json');
+var read = require('read-neuron-json');
+var cwd = '/path/to/package';
+read(cwd, function (err, json){
+  // ...
+});
 ```
+
+- cwd `path` the current working directory
+- err `Error`
+- json `Object` see below
+
+#### json
+
+Contains the fields below at least:
+
+- name `String` the package name of the package
+- main `path=` the filename(relative to `cwd`) of the main entry, if there is no main entry, there will be no `main` key in `json`
+- entries `Array.<path>` if there's no entries, it will be an empty array.
 
 ## License
 
