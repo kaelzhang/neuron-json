@@ -16,9 +16,9 @@ $ npm install neuron-json --save
 ## Usage
 
 ```js
-var read = require('neuron-json');
+var nj = require('neuron-json');
 var cwd = '/path/to/package';
-read(cwd, function (err, json){
+nj.read(cwd, function (err, json){
   // ...
 });
 ```
