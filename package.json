@@ -1,17 +1,21 @@
 {
-  "name": "read-neuron-json",
+  "name": "neuron-json",
   "version": "1.0.0",
-  "description": "read-neuron-json",
+  "description": "neuron-json",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec ./test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/neuron-js/read-neuron-json.git"
+    "url": "git://github.com/neuron-js/neuron-json.git"
   },
   "keywords": [
-    "read-neuron-json"
+    "neuron-json",
+    "read",
+    "package.json",
+    "neuron.json",
+    "write"
   ],
   "engines": {
     "node": ">=0.10.0"
@@ -19,7 +23,7 @@
   "author": "neuron-js",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/neuron-js/read-neuron-json/issues"
+    "url": "https://github.com/neuron-js/neuron-json/issues"
   },
   "devDependencies": {
     "mocha": "*",
