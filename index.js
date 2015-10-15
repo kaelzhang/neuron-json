@@ -16,6 +16,7 @@ exports.clean = function (cwd, json, callback) {
 
 
 exports.read = function(cwd, callback) {
+  cwd = node_path.resolve(cwd);
   var file = node_path.join(cwd, 'neuron.json');
   exports._read_json(file, function (err, json) {
     if (err) {
