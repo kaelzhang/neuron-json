@@ -19,20 +19,12 @@ exports.read = function(cwd, callback) {
   cwd = node_path.resolve(cwd)
   var file = node_path.join(cwd, 'neuron.json')
 
-  function cb (err, result) {
-    if (err) {
-      return callback(err, file)
-    }
-
-    callback(null, result)
-  }
-
   exports._read_json(file, function (err, json) {
     if (err) {
-      return cb(err)
+      return callback(err)
     }
 
-    cleaner.clean(cwd, json, cb)
+    cleaner.clean(cwd, json, callback)
   })
 }
 
