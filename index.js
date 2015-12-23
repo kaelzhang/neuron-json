@@ -23,14 +23,16 @@ exports.read = function(cwd, callback) {
     if (err) {
       return callback(err, file)
     }
+
+    callback(null, result)
   }
 
   exports._read_json(file, function (err, json) {
     if (err) {
-      return callback(err, file)
+      return cb(err)
     }
 
-    cleaner.clean(cwd, json, callback)
+    cleaner.clean(cwd, json, cb)
   })
 }
 
