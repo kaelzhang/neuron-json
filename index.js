@@ -1,37 +1,44 @@
 // utility tools for neuron.json
 
-'use strict';
+'use strict'
 
-var fse         = require('fs-extra');
-var fs          = require('fs');
-var node_path   = require('path');
-var cleaner     = require('./lib/clean');
-var comment_json = require('comment-json');
+var fse         = require('fs-extra')
+var fs          = require('fs')
+var node_path   = require('path')
+var cleaner     = require('./lib/clean')
+var comment_json = require('comment-json')
 
 
 // Cleans the neuron.json for legacy
 exports.clean = function (cwd, json, callback) {
-  cleaner.clean(cwd, json, callback);
-};
+  cleaner.clean(cwd, json, callback)
+}
 
 
 exports.read = function(cwd, callback) {
-  cwd = node_path.resolve(cwd);
-  var file = node_path.join(cwd, 'neuron.json');
+  cwd = node_path.resolve(cwd)
+  var file = node_path.join(cwd, 'neuron.json')
+
+  function cb (err, result) {
+    if (err) {
+      return callback(err, file)
+    }
+  }
+
   exports._read_json(file, function (err, json) {
     if (err) {
-      return callback(err);
+      return callback(err, file)
     }
 
-    cleaner.clean(cwd, json, callback);
-  });
-};
+    cleaner.clean(cwd, json, callback)
+  })
+}
 
 
 exports.write = function(cwd, json, callback) {
-  var file = node_path.join(cwd, 'neuron.json');
-  exports._save_to_file(file, pkg, callback);
-};
+  var file = node_path.join(cwd, 'neuron.json')
+  exports._save_to_file(file, pkg, callback)
+}
 
 
 exports._save_to_file = function(file, json, callback) {
@@ -43,9 +50,9 @@ exports._save_to_file = function(file, json, callback) {
         error: err,
         file: file
       }
-    });
-  });
-};
+    })
+  })
+}
 
 
 exports._read_json = function(file, callback) {
@@ -55,33 +62,34 @@ exports._read_json = function(file, callback) {
         code: 'ERROR_READ_JSON',
         message: 'Error reading "' + file + '": \n' + err.stack,
         data: {
-          error: err
+          error: err,
+          file: file
         }
-      });
+      })
     }
 
-    callback(null, pkg);
+    callback(null, pkg)
   }
 
   fs.exists(file, function (exists) {
     if (!exists) {
-      return callback(null, {});
+      return callback(null, {})
     }
 
     fs.readFile(file, function (err, content) {
       if (err) {
-        return cb(err);
+        return cb(err)
       }
 
-      var pkg;
+      var pkg
       try {
-        pkg = comment_json.parse(content.toString());
+        pkg = comment_json.parse(content.toString())
       } catch(e) {
-        return cb(e);
+        return cb(e)
       }
 
-      cb(null, pkg);
-    });
-  });
-};
+      cb(null, pkg)
+    })
+  })
+}
 
