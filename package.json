@@ -1,6 +1,6 @@
 {
   "name": "neuron-json",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "neuron-json",
   "main": "index.js",
   "scripts": {
@@ -26,8 +26,9 @@
     "url": "https://github.com/neuron-js/neuron-json/issues"
   },
   "devDependencies": {
+    "chai": "*",
     "mocha": "*",
-    "chai": "*"
+    "run-mocha-cases": "^1.1.0"
   },
   "dependencies": {
     "async": "^1.4.2",
