@@ -1,7 +1,7 @@
 {
   "name": "neuron-json",
   "version": "1.2.0",
-  "description": "neuron-json",
+  "description": "The utility to read and clean neuron.json.",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec ./test/*.js"
@@ -35,6 +35,7 @@
     "comment-json": "^1.1.3",
     "fs-expand": "^1.0.0",
     "fs-extra": "^0.24.0",
+    "make-array": "^1.0.1",
     "typo": "^0.2.11"
   }
 }

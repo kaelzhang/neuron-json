@@ -1,7 +1,7 @@
-[![NPM version](https://badge.fury.io/js/neuron-json.svg)](http://badge.fury.io/js/neuron-json)
-[![npm module downloads per month](http://img.shields.io/npm/dm/neuron-json.svg)](https://www.npmjs.org/package/neuron-json)
 [![Build Status](https://travis-ci.org/neuron-js/neuron-json.svg?branch=master)](https://travis-ci.org/neuron-js/neuron-json)
-[![Dependency Status](https://david-dm.org/neuron-js/neuron-json.svg)](https://david-dm.org/neuron-js/neuron-json)
+<!-- [![NPM version](https://badge.fury.io/js/neuron-json.svg)](http://badge.fury.io/js/neuron-json)
+[![npm module downloads per month](http://img.shields.io/npm/dm/neuron-json.svg)](https://www.npmjs.org/package/neuron-json)
+[![Dependency Status](https://david-dm.org/neuron-js/neuron-json.svg)](https://david-dm.org/neuron-js/neuron-json) -->
 
 # neuron-json
 
