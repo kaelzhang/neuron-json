@@ -35,6 +35,10 @@ Contains the fields below at least:
 - main `path=` the filename(relative to `cwd`) of the main entry, if there is no main entry, there will be no `main` key in `json`
 - entries `Array.<path>` if there's no entries, it will be an empty array.
 
+### `process.env.NEURON_NO_TEST_ENTRY`
+
+If `process.env.NEURON_NO_TEST_ENTRY` is specified, then neuron-json will not include test entries automatically.
+
 ## License
 
 MIT
